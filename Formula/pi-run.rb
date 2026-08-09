@@ -1,0 +1,53 @@
+# typed: false
+# frozen_string_literal: true
+
+# Homebrew formula for pi-run — the pi-harness CLI.
+# Installs the prebuilt binary for the user's platform from the GitHub release.
+class PiRun < Formula
+  desc "Provider-agnostic coding-agent harness CLI (Pi + DeepEval)"
+  homepage "https://github.com/forrestbthomas/pi-harness"
+  version "v0.3.0"
+  license "MIT"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.3.0/pi-run-darwin-arm64"
+      sha256 "6f13493f98fdd7a7f335091ddf0d1e8bfafd3e6e7b47183eb5bc446fc0e3fe0b"
+
+      def install
+        bin.install "pi-run-darwin-arm64" => "pi-run"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.3.0/pi-run-darwin-amd64"
+      sha256 "10a50564de4610d650efec4a69c739ee59c232fde632c1097de293bfed6f99ca"
+
+      def install
+        bin.install "pi-run-darwin-amd64" => "pi-run"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/forrestthomas/pi-harness/releases/download/v0.3.0/pi-run-linux-arm64"
+      sha256 "0468154c3dddaab7209acf67312d13fdb2664fdf3c2317cce35d31134e165c52"
+
+      def install
+        bin.install "pi-run-linux-arm64" => "pi-run"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/forrestthomas/pi-harness/releases/download/v0.3.0/pi-run-linux-amd64"
+      sha256 "9c5bd5a6a31fbfe8368f33eeb8c2dbd67a03e53437e07bbcba272b7ba308c6ff"
+
+      def install
+        bin.install "pi-run-linux-amd64" => "pi-run"
+      end
+    end
+  end
+
+  test do
+    system "#{bin}/pi-run", "version"
+  end
+end
