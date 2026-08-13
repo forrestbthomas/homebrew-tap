@@ -13,7 +13,7 @@ class PiRun < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.9.2/pi-run-darwin-arm64"
-      sha256 "78f211f8d9c08be5acb40bba2b8a3f5f031a5bbc2631b6bb78f022f057d11790"
+      sha256 "879dea250f800f7c05e7153028c67793beb5af5b60e1a9b20d25a1fdb03fadf9"
 
       def install
         bin.install "pi-run-darwin-arm64" => "pi-run"
@@ -21,7 +21,7 @@ class PiRun < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.9.2/pi-run-darwin-amd64"
-      sha256 "af1e934f3f5755f2e28bbfa19c0d9c460231e4e2947753c54366d28ccf7160f5"
+      sha256 "be2d8a126ab2089b17ccba60e9c194a37f7178892889fbf133b02589b0c74ca2"
 
       def install
         bin.install "pi-run-darwin-amd64" => "pi-run"
@@ -32,7 +32,7 @@ class PiRun < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.9.2/pi-run-linux-arm64"
-      sha256 "b34e157a8a35920641fc0418b4798286425971b62f6d25663cb3d822117c8d87"
+      sha256 "780afbb5253576785eaa471ebf272a0ca04fa1d4c71de2457b78d53e2d5b4cd5"
 
       def install
         bin.install "pi-run-linux-arm64" => "pi-run"
@@ -40,7 +40,7 @@ class PiRun < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.9.2/pi-run-linux-amd64"
-      sha256 "4e845645fbc87b804eb33e51b23b7a91916c50029e1355a3b34dcdc24dcf7d5f"
+      sha256 "6da733cb84da4f431380dfa52ab5ed928335dd63574433411484cfb94285b54e"
 
       def install
         bin.install "pi-run-linux-amd64" => "pi-run"
