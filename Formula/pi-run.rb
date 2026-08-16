@@ -7,21 +7,21 @@
 class PiRun < Formula
   desc "Provider-agnostic coding-agent harness CLI (Pi + DeepEval)"
   homepage "https://github.com/forrestbthomas/pi-harness"
-  version "v0.10.0"
+  version "v0.11.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.10.0/pi-run-darwin-arm64"
-      sha256 "b0cf3fd8048ff2a8272bf1864dc3b92f06d9b9cdfd31da16e33db72b94dac9de"
+      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.11.0/pi-run-darwin-arm64"
+      sha256 "b681090094d90322778fba41f3060c7cd71dbdb9ab00339efac84b324f05c0ad"
 
       def install
         bin.install "pi-run-darwin-arm64" => "pi-run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.10.0/pi-run-darwin-amd64"
-      sha256 "716f084351dd835a87760988bed803416ead4c04a42914ca02fa7ceaa2965ac0"
+      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.11.0/pi-run-darwin-amd64"
+      sha256 "edf0210aa3bf119dda31ad74bbdb104dad9f847bffe477861e33df35a02e5cb2"
 
       def install
         bin.install "pi-run-darwin-amd64" => "pi-run"
@@ -31,16 +31,16 @@ class PiRun < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.10.0/pi-run-linux-arm64"
-      sha256 "9587d2bab6d6e788d34ed1a5ed54dd5275287b86bec043d9f1bcfca7ce7e1e96"
+      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.11.0/pi-run-linux-arm64"
+      sha256 "19632e46dc00dbbf78c955214ff375d63de4958585cab14646f1fbccca6adaef"
 
       def install
         bin.install "pi-run-linux-arm64" => "pi-run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.10.0/pi-run-linux-amd64"
-      sha256 "900a2a68bcbb845b29d1b7b52bef4def98585f1e4aafdebc46a0ba73e30ca8f7"
+      url "https://github.com/forrestbthomas/pi-harness/releases/download/v0.11.0/pi-run-linux-amd64"
+      sha256 "bde6521a896ce4276649fc2d6b57e756efa06fae98d739b4f06252a10335910e"
 
       def install
         bin.install "pi-run-linux-amd64" => "pi-run"
